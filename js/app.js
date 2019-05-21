@@ -14,7 +14,10 @@ document.getElementById('buscarBtn').addEventListener('click', (e) => {
 
     //Validando input
     if(textoBuscador !== ''){
-        console.log('Buscando...');
+        eventbrite.obtenerEventos(textoBuscador, categoriaSeleccionada)
+        .then(eventos => {
+            console.log(eventos);
+        })
     }else {
         ui.mostrarMensaje('Escribe algo en el buscador', 'alert alert-danger mt-4');
     }
